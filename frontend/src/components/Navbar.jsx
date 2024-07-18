@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/navbar.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -62,6 +63,7 @@ export default function Navbar() {
             </div>
 
             <div className="d-flex align-items-center left-icon">
+                <Link to="/login">
               <button
                 data-mdb-ripple-init=""
                 type="button"
@@ -69,6 +71,8 @@ export default function Navbar() {
               >
                 Login
               </button>
+              </Link>
+              <Link to="/register">
               <button
                 data-mdb-ripple-init=""
                 type="button"
@@ -76,6 +80,7 @@ export default function Navbar() {
               >
                 Sign up
               </button>
+              </Link>
               <a href="#" className="text-white me-3">
                 <i className="fas fa-user fs-5"></i>
               </a>
