@@ -5,7 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 export default function Register() {
     const navigate = useNavigate();
 
-    const CancleRegistration = (e) => {
+    const handleCancleRegistration = (e) => {
         e.preventDefault()
         navigate('/')
     }
@@ -21,13 +21,13 @@ export default function Register() {
             <label htmlFor="fullName" className="form-label">
               Full name
             </label>
-            <input type="text" className="form-control" id="fullName" />
+            <input type="text" className="form-control" id="fullName" placeholder="enter full name"/>
           </div>
           <div className="mb-3">
             <label htmlFor="userName" className="form-label">
               User name
             </label>
-            <input type="text" className="form-control" id="userName" />
+            <input type="text" className="form-control" id="userName" placeholder="enter user name"/>
           </div>
           <div className="mb-3">
             <label htmlFor="dob" className="form-label">
@@ -90,20 +90,20 @@ export default function Register() {
             <label htmlFor="contactNumber" className="form-label">
               Contact number
             </label>
-            <input type="text" className="form-control" id="contactNumber" />
+            <input type="text" className="form-control" id="contactNumber" placeholder="enter contact number"/>
           </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Email address
             </label>
-            <input type="email" className="form-control" id="email" />
+            <input type="email" className="form-control" id="email" placeholder="enter email" />
           </div>
 
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control" id="password" />
+            <input type="password" className="form-control" id="password" placeholder="enter password"/>
           </div>
           <div className="mb-3 form-check mt-3">
             <input
@@ -119,7 +119,7 @@ export default function Register() {
             <button type="submit" className="btn btn-primary">
               Register
             </button>
-            <button type="submit" className="btn btn-danger" onClick={CancleRegistration}>
+            <button type="submit" className="btn btn-danger" onClick={handleCancleRegistration}>
               Cancle
             </button>
           </div>
