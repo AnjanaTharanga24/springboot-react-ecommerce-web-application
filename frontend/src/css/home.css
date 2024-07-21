@@ -17,3 +17,75 @@
 .card-sec-two{
     margin-top: -25px;
 }
+
+.card-img-top{
+    margin-top: -485px;
+    width: 445px;
+    /* height: auto; */
+    margin-left: 250px;
+}
+
+.card-one-title{
+    width: auto;
+    margin-left: -250px;
+    font-size: 50px;
+}
+
+.card-one-paragraph{
+    margin-top: 50px;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.card-one-button{
+    margin-top: 50px;
+    font-size: 50px;
+}
+
+.card2-img-top{
+    margin-top: -150px;
+    width: 305px;
+    margin-left: 40px;
+}
+
+.card-two-paragraph{
+    margin-top: 30px;
+    width: 200px;
+    margin-left: -5px;
+}
+
+.card-two-title{
+    margin-left: -120px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.card3-img-top {
+    margin-top: -175px;
+    width: 345px;
+    margin-left: 90px;
+}
+
+.card4-img-top {
+    margin-top: -150px;
+    width: 205px;
+    margin-left: 140px;
+}
+
+.card-four-title{
+    margin-left: -150px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.card5-img-top{
+    margin-top: -197px;
+    width: 190px;
+    margin-left: 170px; 
+}
+
+.card-five-title{
+    margin-left: -140px;
+    font-size: 30px;
+    font-weight: 400;
+}
