@@ -86,3 +86,19 @@
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  .user-icon{
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  .shopping-cart{
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: -50px;
+  }
+
+  .dropdown-arrow {
+    margin-left: -10px;
+    text-decoration: none;
+  }
