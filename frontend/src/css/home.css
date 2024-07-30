@@ -1,8 +1,9 @@
 .card-one{
     margin-top: 50px;
-    width: 650px;
-    height: 525px;
+    width: 750px;
+    height: 575px;
     margin-left: 35px;
+    background-color: bisque;
     
 }
 
@@ -10,8 +11,9 @@
     margin-top: 50px;
     width: 100px;
     margin-left: 30px;
-    height: 250px;
+    height: 275px;
     width: 350px;
+    background-color: aquamarine;
 }
 
 .card-sec-two{
@@ -19,16 +21,16 @@
 }
 
 .card-img-top{
-    margin-top: -485px;
-    width: 445px;
+    margin-top: -505px;
+    width: 485px;
     /* height: auto; */
-    margin-left: 250px;
+    margin-left: 300px;
 }
 
 .card-one-title{
     width: auto;
-    margin-left: -250px;
-    font-size: 50px;
+    margin-left: -270px;
+    font-size: 60px;
 }
 
 .card-one-paragraph{
@@ -43,7 +45,7 @@
 }
 
 .card2-img-top{
-    margin-top: -150px;
+    margin-top: -130px;
     width: 305px;
     margin-left: 40px;
 }
@@ -61,15 +63,15 @@
 }
 
 .card3-img-top {
-    margin-top: -175px;
-    width: 345px;
-    margin-left: 90px;
+    margin-top: -165px;
+    width: 365px;
+    margin-left: 70px;
 }
 
 .card4-img-top {
-    margin-top: -150px;
-    width: 205px;
-    margin-left: 140px;
+    margin-top: -135px;
+    width: 215px;
+    margin-left: 129px;
 }
 
 .card-four-title{
@@ -79,8 +81,8 @@
 }
 
 .card5-img-top{
-    margin-top: -197px;
-    width: 190px;
+    margin-top: -186px;
+    width: 200px;
     margin-left: 170px; 
 }
 
@@ -89,3 +91,5 @@
     font-size: 30px;
     font-weight: 400;
 }
+
+

@@ -7,15 +7,12 @@ import cardThreeImage from "../images/kids.png";
 import cardFourImage from "../images/cosmetics.png.png";
 import cardFiveImage from "../images/accessories.png";
 
-
-
-
 export default function Home() {
   return (
-    <div className="App">
+    <div className="App home">
       <Navbar />
 
-      <div className=" d-flex">
+      <div className=" d-flex justify-content-center">
         <div className="card shadow card-one col-lg-4">
           <div className="">
             <div className="card-one-title">
