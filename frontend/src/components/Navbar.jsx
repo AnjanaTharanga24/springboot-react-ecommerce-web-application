@@ -20,29 +20,19 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-        <div className="container">
-          <button
-            data-mdb-collapse-init=""
-            className="navbar-toggler"
-            type="button"
-            data-mdb-target="#navbarButtonsExample"
-            aria-controls="navbarButtonsExample"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fas fa-bars" />
-          </button>
+        <div className=" ">
+         
 
-          <div className="collapse navbar-collapse" id="navbarButtonsExample">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-              <li className="nav-item">
-                <a className="nav-link text-white fs-4" href="#">
+          <div className="navbar-collapse " >
+            <ul className="nav-title" style={{marginRight: "100px"}}>
+              <li className="">
+                <a className="nav-link text-white fs-4 mt-3" href="#">
                   Shopping Cart
                 </a>
               </li>
             </ul>
 
-            <div className="d-flex nav-content">
+            <div className="d-flex navbar-items">
               <ul className="navbar-nav mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a className="nav-link text-white fs-5" href="#">
@@ -76,7 +66,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex align-items-center left-icon">
+            <div className="d-flex  left-icon " style={{marginLeft: "700px"}}>
               {!user && (
                 <>
                   <Link to="/login">
@@ -102,10 +92,15 @@ export default function Navbar() {
 
               {user && (
                 <>
-                  <a href="#" className="text-white me-3" onClick={toggleDropdown}>
+                  
+                  <a href="#" className="text-white p-2">
+                    <i className="fas fa-shopping-cart shopping-cart"></i>
+                  </a>
+
+                  <a href="#" className="text-white user-icon" onClick={toggleDropdown}>
                     <i className="fas fa-user fs-5"></i>
                     <span className="username text-white fs-5">{user.username}</span>
-                    <span className="dropdown-arrow text-white fs-4">▼</span>
+                    <span className="dropdown-arrow text-white fs-5">▼</span>
                     {dropdownOpen && (
                   <div className="dropdown-content show">
                      <Link to="/student-profile">
@@ -118,9 +113,6 @@ export default function Navbar() {
                   </div>
                   
                 )}
-                  </a>
-                  <a href="#" className="text-white p-2">
-                    <i className="fas fa-shopping-cart fs-5"></i>
                   </a>
                 </>
               )}
