@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 export default function Navbar() {
+  const { user, setUser } = useContext(UserContext);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleLogout = () => {
+    setUser(null);
+    setDropdownOpen(false);
+
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark">
@@ -63,30 +77,53 @@ export default function Navbar() {
             </div>
 
             <div className="d-flex align-items-center left-icon">
-                <Link to="/login">
-              <button
-                data-mdb-ripple-init=""
-                type="button"
-                className="btn btn-success me-3"
-              >
-                Login
-              </button>
-              </Link>
-              <Link to="/register">
-              <button
-                data-mdb-ripple-init=""
-                type="button"
-                className="btn btn-primary me-3"
-              >
-                Sign up
-              </button>
-              </Link>
-              <a href="#" className="text-white me-3">
-                <i className="fas fa-user fs-5"></i>
-              </a>
-              <a href="#" className="text-white p-2">
-                <i className="fas fa-shopping-cart fs-5"></i>
-              </a>
+              {!user && (
+                <>
+                  <Link to="/login">
+                    <button
+                      data-mdb-ripple-init=""
+                      type="button"
+                      className="btn btn-success me-3"
+                    >
+                      Login
+                    </button>
+                  </Link>
+                  <Link to="/register">
+                    <button
+                      data-mdb-ripple-init=""
+                      type="button"
+                      className="btn btn-primary me-3"
+                    >
+                      Sign up
+                    </button>
+                  </Link>
+                </>
+              )}
+
+              {user && (
+                <>
+                  <a href="#" className="text-white me-3" onClick={toggleDropdown}>
+                    <i className="fas fa-user fs-5"></i>
+                    <span className="username text-white fs-5">{user.username}</span>
+                    <span className="dropdown-arrow text-white fs-4">▼</span>
+                    {dropdownOpen && (
+                  <div className="dropdown-content show">
+                     <Link to="/student-profile">
+                      My profile
+                    </Link>
+                    <Link to="/" onClick={handleLogout}>
+                      Logout
+                    </Link>
+                   
+                  </div>
+                  
+                )}
+                  </a>
+                  <a href="#" className="text-white p-2">
+                    <i className="fas fa-shopping-cart fs-5"></i>
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </div>
