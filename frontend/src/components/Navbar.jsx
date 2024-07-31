@@ -17,8 +17,6 @@ export default function Navbar() {
     console.log("Dropdown toggled. New state:", !dropdownOpen); // Debug log
   };
 
-  console.log("User object:", user);
-  console.log("User roles:", user?.roles);
 
   return (
     <div>
@@ -115,7 +113,7 @@ export default function Navbar() {
                       <div className="dropdown-content show">
                       <ul className="list-unstyled m-0 p-0">
                         <li>
-                          <Link to="/student-profile" className="dropdown-item text-dark">My profile</Link>
+                          <Link to="/user-profile" className="dropdown-item text-dark">My profile</Link>
                         </li>
                         {user.roles && user.roles.includes("seller") && (
                           <li>
