@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../components/UserContext"; // Adjust this path if needed
 
 export default function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -14,15 +14,23 @@ export default function Navbar() {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+    console.log("Dropdown toggled. New state:", !dropdownOpen); // Debug log
   };
+
+  console.log("User object:", user);
+  console.log("User roles:", user?.roles);
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-dark" style={{
-        boxShadow: '0 4px 20px rgba(255, 255, 255, 0.)'}}>
+      <nav
+        className="navbar navbar-expand-lg bg-dark"
+        style={{
+          boxShadow: "0 4px 20px rgba(255, 255, 255, 0.)",
+        }}
+      >
         <div className=" ">
-          <div className="navbar-collapse " >
-            <ul className="nav-title" style={{marginRight: "100px"}}>
+          <div className="navbar-collapse ">
+            <ul className="nav-title" style={{ marginRight: "100px" }}>
               <li className="">
                 <a className="nav-link text-white fs-4 mt-3" href="#">
                   Shopping Cart
@@ -64,7 +72,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex  left-icon " style={{marginLeft: "700px"}}>
+            <div className="d-flex  left-icon " style={{ marginLeft: "700px" }}>
               {!user && (
                 <>
                   <Link to="/login">
@@ -94,19 +102,42 @@ export default function Navbar() {
                     <i className="fas fa-shopping-cart shopping-cart"></i>
                   </a>
 
-                  <div className="text-white user-icon d-flex align-items-center me-2" onClick={toggleDropdown}>
+                  <div
+                    className="text-white user-icon d-flex align-items-center me-2"
+                    onClick={toggleDropdown}
+                  >
                     <i className="fas fa-user fs-5"></i>
-                    <span className="username text-white fs-5">{user.username}</span>
+                    <span className="username text-white fs-5">
+                      {user.username}
+                    </span>
                     <span className="dropdown-arrow text-white fs-5">▼</span>
                     {dropdownOpen && (
                       <div className="dropdown-content show">
-                        <Link to="/student-profile">
-                          My profile
-                        </Link>
-                        <Link to="/" onClick={handleLogout}>
-                          Logout
-                        </Link>
-                      </div>
+                      <ul className="list-unstyled m-0 p-0">
+                        <li>
+                          <Link to="/student-profile" className="dropdown-item text-dark">My profile</Link>
+                        </li>
+                        {user.roles && user.roles.includes("seller") && (
+                          <li>
+                            <Link to="/seller/dashboard" className="dropdown-item text-dark">
+                              Seller Dashboard
+                            </Link>
+                          </li>
+                        )}
+                        {user.roles && user.roles.includes("buyer") && (
+                          <li>
+                            <Link to="/buyer/profile" className="dropdown-item text-dark">
+                              Buyer Profile
+                            </Link>
+                          </li>
+                        )}
+                        <li>
+                          <Link to="/" onClick={handleLogout} className="dropdown-item text-dark">
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
                     )}
                   </div>
                 </>
