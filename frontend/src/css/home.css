@@ -1,9 +1,14 @@
+.home{
+  background-color: rgb(34, 33, 33);
+}
+
 .card-one{
     margin-top: 50px;
     width: 750px;
     height: 575px;
     margin-left: 35px;
-    background-color: bisque;
+    background-color: aquamarine;
+    
     
 }
 
@@ -21,7 +26,7 @@
 }
 
 .card-img-top{
-    margin-top: -505px;
+    margin-top: -511px;
     width: 485px;
     /* height: auto; */
     margin-left: 300px;
@@ -63,13 +68,13 @@
 }
 
 .card3-img-top {
-    margin-top: -165px;
+    margin-top: -170px;
     width: 365px;
     margin-left: 70px;
 }
 
 .card4-img-top {
-    margin-top: -135px;
+    margin-top: -143px;
     width: 215px;
     margin-left: 129px;
 }
@@ -81,7 +86,7 @@
 }
 
 .card5-img-top{
-    margin-top: -186px;
+    margin-top: -194px;
     width: 200px;
     margin-left: 170px; 
 }
