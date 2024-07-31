@@ -1,21 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import '../css/profile.css'
 import profileImage from '../images/profile2.jpg'
 import { UserContext } from '../components/UserContext'
+import axios from 'axios'
 
 export default function UserProfile() {
  const { user } = useContext(UserContext);
  console.log(user);
+
   return (
     <div className='user-profile'>
         <Navbar/>
         <div className=" d-flex profile-card ">
         <div className="shadow profile-image-card ">
           <img src={profileImage} className="profile-image" />
-          <p className="profile-name"></p>
+          <p className="profile-name">{user.username}</p>
           <div className="p-4">
             <Link to='/update-student-profile'>
             <button className="btn btn-primary edit-btn ">Edit profile</button>
@@ -52,25 +54,25 @@ export default function UserProfile() {
             </div>
             <div className="value-text fs-2">
                 <div className="p-1">
-                    <label ></label>
+                    <label >{user.name}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label>{user.username}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label>{user.dob}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label>{user.gender}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label> {user.roles && user.roles.map(role => role.name)}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label>{user.number}</label>
                 </div>
                 <div className="p-1">
-                    <label></label>
+                    <label>{user.email}</label>
                 </div>
                 <div className="p-1">
                     <label></label>
