@@ -6,6 +6,8 @@ import com.example.backend.controller.response.UserRegisterResponse;
 import com.example.backend.controller.response.UserResponse;
 import com.example.backend.exception.AlreadyExistException;
 import com.example.backend.exception.NotFoundException;
+import com.example.backend.model.User;
+import com.example.backend.repository.UserRepository;
 import com.example.backend.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,7 @@ import java.util.stream.Collectors;
 public class AuthController {
 
     private AuthService authService;
+    private UserRepository userRepository;
     private AuthenticationManager authenticationManager;
     @PostMapping("/register")
     public UserRegisterResponse userRegistration(@RequestBody UserRegisterRequest userRegisterRequest) throws AlreadyExistException, NotFoundException {
@@ -36,8 +39,8 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest){
-        try{
+    public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
+        try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             loginRequest.getUsername(),
@@ -50,15 +53,19 @@ public class AuthController {
             org.springframework.security.core.userdetails.User springUser =
                     (org.springframework.security.core.userdetails.User) authentication.getPrincipal();
 
+            User fullUser = userRepository.findByUsername(springUser.getUsername())
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+
             UserResponse userResponse = new UserResponse(
                     springUser.getUsername(),
                     springUser.getAuthorities().stream()
                             .map(GrantedAuthority::getAuthority)
-                            .collect(Collectors.toSet())
+                            .collect(Collectors.toSet()),
+                    fullUser
             );
 
             return ResponseEntity.ok(userResponse);
-        }catch(AuthenticationException e){
+        } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
         }
     }

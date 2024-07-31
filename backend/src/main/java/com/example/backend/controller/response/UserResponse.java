@@ -1,6 +1,7 @@
 package com.example.backend.controller.response;
 
 import com.example.backend.model.Gender;
+import com.example.backend.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +16,6 @@ public class UserResponse {
 
     private String username;
     private Set<String> roles;
+    private User user;
 
 }
