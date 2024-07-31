@@ -30,7 +30,7 @@ export default function Login() {
         navigate('/')
     }
   return (
-    <div>
+    <div className="login-page">
       <div className="card form-login-card shadow ">
         <div className="mb-4">
           <h1>Sign In</h1>
@@ -38,17 +38,17 @@ export default function Login() {
 
         <form>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">
+            <label htmlFor="email" className="form-label ">
               Email address / User name
             </label>
-            <input type="text" className="form-control" id="email" placeholder="enter email or password" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" className="form-control login-form-control" id="email" placeholder="enter email or password" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
 
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control" id="password" placeholder="enter password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" className="form-control login-form-control" id="password" placeholder="enter password" value={password} onChange={(e) => setPassword(e.target.value)}/>
           </div>
 
           <div className="mt-4">
