@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { UserProvider } from "./components/UserContext";
 import UserProfile from "./pages/UserProfile";
+import UserProfileUpdate from "./pages/UserProfileUpdate";
 function App() {
   return (
 
@@ -18,6 +19,8 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/user-profile" element={<UserProfile/>}/>
+          <Route path="/user-profile-update" element={<UserProfileUpdate/>}/>
+
         </Routes>
       </Router>
     </div>

@@ -19,7 +19,7 @@ export default function UserProfile() {
           <img src={profileImage} className="profile-image" />
           <p className="profile-name">{user.username}</p>
           <div className="p-4">
-            <Link to='/update-student-profile'>
+            <Link to='/user-profile-update'>
             <button className="btn btn-primary edit-btn ">Edit profile</button>
             </Link>
             <button className="btn btn-danger delete-btn" >
