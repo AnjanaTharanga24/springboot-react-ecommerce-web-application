@@ -17,8 +17,8 @@ export default function Login() {
           username,
           password
         })
-        setUser(response.data)
-        console.log("loging response : " , response.data)
+        setUser(response.data.user)
+    
         navigate('/')
        } catch (error) {
          console.log("login error : " , error)

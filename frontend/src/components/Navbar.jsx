@@ -17,6 +17,8 @@ export default function Navbar() {
     console.log("Dropdown toggled. New state:", !dropdownOpen); // Debug log
   };
 
+  const roleNames = user?.roles?.map(role => role.name) || [];
+  console.log("user role names: ", roleNames); // Log user role names for debugging
 
   return (
     <div>
@@ -70,7 +72,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex  left-icon " style={{ marginLeft: "700px" }}>
+            <div className="d-flex left-icon" style={{ marginLeft: "700px" }}>
               {!user && (
                 <>
                   <Link to="/login">
@@ -111,31 +113,33 @@ export default function Navbar() {
                     <span className="dropdown-arrow text-white fs-5">▼</span>
                     {dropdownOpen && (
                       <div className="dropdown-content show">
-                      <ul className="list-unstyled m-0 p-0">
-                        <li>
-                          <Link to="/user-profile" className="dropdown-item text-dark">My profile</Link>
-                        </li>
-                        {user.roles && user.roles.includes("seller") && (
+                        <ul className="list-unstyled m-0 p-0">
                           <li>
-                            <Link to="/seller/dashboard" className="dropdown-item text-dark">
-                              Seller Dashboard
+                            <Link to="/user-profile" className="dropdown-item text-dark">
+                              My profile
                             </Link>
                           </li>
-                        )}
-                        {user.roles && user.roles.includes("buyer") && (
+                          {roleNames.includes("seller") && (
+                            <li>
+                              <Link to="/seller/dashboard" className="dropdown-item text-dark">
+                                Seller Dashboard
+                              </Link>
+                            </li>
+                          )}
+                          {roleNames.includes("buyer") && (
+                            <li>
+                              <Link to="/buyer/profile" className="dropdown-item text-dark">
+                                Buyer Profile
+                              </Link>
+                            </li>
+                          )}
                           <li>
-                            <Link to="/buyer/profile" className="dropdown-item text-dark">
-                              Buyer Profile
+                            <Link to="/" onClick={handleLogout} className="dropdown-item text-dark">
+                              Logout
                             </Link>
                           </li>
-                        )}
-                        <li>
-                          <Link to="/" onClick={handleLogout} className="dropdown-item text-dark">
-                            Logout
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </>
