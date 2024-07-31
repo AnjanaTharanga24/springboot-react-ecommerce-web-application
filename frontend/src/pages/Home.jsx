@@ -6,6 +6,7 @@ import cardTwoImage from "../images/men.png";
 import cardThreeImage from "../images/kids.png";
 import cardFourImage from "../images/cosmetics.png.png";
 import cardFiveImage from "../images/accessories.png";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +14,12 @@ export default function Home() {
       <Navbar />
 
       <div className=" d-flex justify-content-center">
-        <div className="card shadow card-one col-lg-4">
+        <div
+          className="card card-one col-lg-4"
+          style={{
+            boxShadow: "0 4px 20px rgba(255, 255, 255, 0.4)",
+          }}
+        >
           <div className="">
             <div className="card-one-title">
               <p>Women' Fashion</p>
@@ -27,7 +33,9 @@ export default function Home() {
                 blanditiis maiores asperiores obcaecati repellat sed
                 repudiandae.
               </p>
-              <button className="card-one-button">SHOP NOW</button>
+              <button className="btn btn-success card-one-button">
+                SHOP NOW
+              </button>
             </div>
             <img src={cardOneImage} alt="Example" className="card-img-top " />
           </div>
@@ -35,7 +43,12 @@ export default function Home() {
 
         <div className="">
           <div className="d-flex">
-            <div className="card shadow card-two col-lg-4 ">
+            <div
+              className="card  card-two col-lg-4 "
+              style={{
+                boxShadow: "0 4px 20px rgba(255, 255, 255, 0.4)",
+              }}
+            >
               <div className="">
                 <div className="card-two-title">
                   <p>Men's Fashion</p>
@@ -47,7 +60,9 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
-                  <button className="card-two-button">SHOP NOW</button>
+                  <button className="btn btn-success card-two-button">
+                    SHOP NOW
+                  </button>
                 </div>
                 <img
                   src={cardTwoImage}
@@ -56,7 +71,8 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="card shadow card-two col-lg-4 ">
+            <div className="card  card-two col-lg-4 " style={{
+        boxShadow: '0 4px 20px rgba(255, 255, 255, 0.4)'}}>
               <div className="">
                 <div className="card-two-title">
                   <p>Kid's Fashion</p>
@@ -68,7 +84,9 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
-                  <button className="card-two-button">SHOP NOW</button>
+                  <button className="btn btn-success card-two-button">
+                    SHOP NOW
+                  </button>
                 </div>
                 <img
                   src={cardThreeImage}
@@ -78,8 +96,14 @@ export default function Home() {
               </div>
             </div>{" "}
           </div>
+
           <div className="d-flex card-sec-two">
-            <div className="card shadow card-two col-lg-4 ">
+            <div
+              className="card  card-two col-lg-4 "
+              style={{
+                boxShadow: "0 4px 20px rgba(255, 255, 255, 0.4)",
+              }}
+            >
               <div className="">
                 <div className="card-four-title">
                   <p>Cosmetics</p>
@@ -91,7 +115,9 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
-                  <button className="card-two-button">SHOP NOW</button>
+                  <button className="btn btn-success card-two-button">
+                    SHOP NOW
+                  </button>
                 </div>
                 <img
                   src={cardFourImage}
@@ -100,9 +126,14 @@ export default function Home() {
                 />
               </div>
             </div>{" "}
-            <div className="card shadow card-two col-lg-4 ">
+            <div
+              className="card card-two col-lg-4 "
+              style={{
+                boxShadow: "0 4px 20px rgba(255, 255, 255, 0.4)",
+              }}
+            >
               <div className="">
-                <div className="card-five-title">
+                <div className="card-five-title" >
                   <p>Accessories</p>
                 </div>
 
@@ -112,7 +143,9 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
-                  <button className="card-two-button">SHOP NOW</button>
+                  <button className=" btn btn-success card-two-button">
+                    SHOP NOW
+                  </button>
                 </div>
                 <img
                   src={cardFiveImage}
@@ -124,6 +157,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

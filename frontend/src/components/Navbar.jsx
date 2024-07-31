@@ -10,7 +10,6 @@ export default function Navbar() {
   const handleLogout = () => {
     setUser(null);
     setDropdownOpen(false);
-
   };
 
   const toggleDropdown = () => {
@@ -19,10 +18,9 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+      <nav className="navbar navbar-expand-lg bg-dark" style={{
+        boxShadow: '0 4px 20px rgba(255, 255, 255, 0.)'}}>
         <div className=" ">
-         
-
           <div className="navbar-collapse " >
             <ul className="nav-title" style={{marginRight: "100px"}}>
               <li className="">
@@ -92,28 +90,25 @@ export default function Navbar() {
 
               {user && (
                 <>
-                  
                   <a href="#" className="text-white p-2 cart-icon">
                     <i className="fas fa-shopping-cart shopping-cart"></i>
                   </a>
 
-                  <a href="#" className="text-white user-icon" onClick={toggleDropdown}>
+                  <div className="text-white user-icon d-flex align-items-center me-2" onClick={toggleDropdown}>
                     <i className="fas fa-user fs-5"></i>
                     <span className="username text-white fs-5">{user.username}</span>
                     <span className="dropdown-arrow text-white fs-5">▼</span>
                     {dropdownOpen && (
-                  <div className="dropdown-content show">
-                     <Link to="/student-profile">
-                      My profile
-                    </Link>
-                    <Link to="/" onClick={handleLogout}>
-                      Logout
-                    </Link>
-                   
+                      <div className="dropdown-content show">
+                        <Link to="/student-profile">
+                          My profile
+                        </Link>
+                        <Link to="/" onClick={handleLogout}>
+                          Logout
+                        </Link>
+                      </div>
+                    )}
                   </div>
-                  
-                )}
-                  </a>
                 </>
               )}
             </div>
