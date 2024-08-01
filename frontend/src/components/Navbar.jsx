@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { UserContext } from "../components/UserContext"; // Adjust this path if needed
+import logoImage from "../images/logo.png";
 
 export default function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -17,7 +18,7 @@ export default function Navbar() {
     console.log("Dropdown toggled. New state:", !dropdownOpen); // Debug log
   };
 
-  const roleNames = user?.roles?.map(role => role.name) || [];
+  const roleNames = user?.roles?.map((role) => role.name) || [];
   console.log("user role names: ", roleNames); // Log user role names for debugging
 
   return (
@@ -30,13 +31,19 @@ export default function Navbar() {
       >
         <div className=" ">
           <div className="navbar-collapse ">
-            <ul className="nav-title" style={{ marginRight: "100px" }}>
-              <li className="">
-                <a className="nav-link text-white fs-4 mt-3" href="#">
-                  Shopping Cart
-                </a>
-              </li>
-            </ul>
+            <Link to="/" className="">
+              <ul
+                className="nav-title"
+                style={{ marginRight: "100px", width: "350px" }}
+              >
+                <li className="d-flex">
+                  <img className="logo" src={logoImage} />
+                  <a className="nav-link text-white fs-1 mt-3 ms-2" href="#">
+                    Fashion Cart
+                  </a>
+                </li>
+              </ul>
+            </Link>
 
             <div className="d-flex navbar-items">
               <ul className="navbar-nav mb-2 mb-lg-0">
@@ -72,7 +79,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex left-icon" style={{ marginLeft: "700px" }}>
+            <div className="d-flex left-icon " style={{ marginLeft: "530px" }}>
               {!user && (
                 <>
                   <Link to="/login">
@@ -115,26 +122,39 @@ export default function Navbar() {
                       <div className="dropdown-content show">
                         <ul className="list-unstyled m-0 p-0">
                           <li>
-                            <Link to="/user-profile" className="dropdown-item text-dark">
+                            <Link
+                              to="/user-profile"
+                              className="dropdown-item text-dark"
+                            >
                               My profile
                             </Link>
                           </li>
                           {roleNames.includes("seller") && (
                             <li>
-                              <Link to="/seller/dashboard" className="dropdown-item text-dark">
+                              <Link
+                                to="/seller/dashboard"
+                                className="dropdown-item text-dark"
+                              >
                                 Seller Dashboard
                               </Link>
                             </li>
                           )}
                           {roleNames.includes("buyer") && (
                             <li>
-                              <Link to="/buyer/profile" className="dropdown-item text-dark">
+                              <Link
+                                to="/buyer/profile"
+                                className="dropdown-item text-dark"
+                              >
                                 Buyer Profile
                               </Link>
                             </li>
                           )}
                           <li>
-                            <Link to="/" onClick={handleLogout} className="dropdown-item text-dark">
+                            <Link
+                              to="/"
+                              onClick={handleLogout}
+                              className="dropdown-item text-dark"
+                            >
                               Logout
                             </Link>
                           </li>
