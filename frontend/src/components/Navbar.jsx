@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { UserContext } from "../components/UserContext"; // Adjust this path if needed
+import logoImage from "../images/logo.png";
 
 export default function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -30,8 +31,9 @@ export default function Navbar() {
       >
         <div className=" ">
           <div className="navbar-collapse ">
-            <ul className="nav-title" style={{ marginRight: "100px" }}>
-              <li className="">
+            <ul className="nav-title" style={{ marginRight: "100px",width:"250px" }}>
+              <li className="d-flex">
+                <img className="logo" src={logoImage}/>
                 <a className="nav-link text-white fs-4 mt-3" href="#">
                   Shopping Cart
                 </a>
@@ -72,7 +74,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex left-icon" style={{ marginLeft: "700px" }}>
+            <div className="d-flex left-icon " style={{ marginLeft: "600px" }}>
               {!user && (
                 <>
                   <Link to="/login">
