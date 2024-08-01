@@ -31,11 +31,11 @@ export default function Navbar() {
       >
         <div className=" ">
           <div className="navbar-collapse ">
-            <ul className="nav-title" style={{ marginRight: "100px",width:"250px" }}>
+            <ul className="nav-title" style={{ marginRight: "100px",width:"350px" }}>
               <li className="d-flex">
                 <img className="logo" src={logoImage}/>
-                <a className="nav-link text-white fs-4 mt-3" href="#">
-                  Shopping Cart
+                <a className="nav-link text-white fs-1 mt-3 ms-2" href="#">
+                  Fashion Cart
                 </a>
               </li>
             </ul>
@@ -74,7 +74,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex left-icon " style={{ marginLeft: "600px" }}>
+            <div className="d-flex left-icon " style={{ marginLeft: "530px" }}>
               {!user && (
                 <>
                   <Link to="/login">
