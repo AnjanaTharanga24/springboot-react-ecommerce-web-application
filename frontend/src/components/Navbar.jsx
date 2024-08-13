@@ -79,7 +79,7 @@ export default function Navbar() {
               </ul>
             </div>
 
-            <div className="d-flex left-icon " style={{ marginLeft: "530px" }}>
+            <div className="d-flex left-icon ">
               {!user && (
                 <>
                   <Link to="/login">
