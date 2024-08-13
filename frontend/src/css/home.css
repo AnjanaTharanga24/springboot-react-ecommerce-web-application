@@ -4,9 +4,9 @@
 
 .card-one{
     margin-top: 50px;
-    width: 750px;
-    height: 575px;
-    margin-left: 35px;
+    width: 920px;
+    height: 600px;
+    margin-left: -5px;
     background-color: aquamarine;
     
     
@@ -14,10 +14,9 @@
 
 .card-two{
     margin-top: 50px;
-    width: 100px;
     margin-left: 30px;
-    height: 275px;
-    width: 350px;
+    height: 285px;
+    width: 390px;
     background-color: aquamarine;
 }
 
