@@ -1,70 +1,141 @@
-.form-card{
-   width: 900px;
-   margin-left: 350px;
-   text-align: start;
-   padding: 40px;
-   margin-bottom: 150px;
-   margin-top: 60px;
-   background-color: rgba(0, 0, 0, 0.9); 
-   color: white;
-   border-radius: 28px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-   font-size: 20px;
-   
-}
-   
-.register-page{
-    background-image: url(../images/loginbg3.jpg) ;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.register-container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.form-header h2 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  .register-form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .register-form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+.register-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 20px;
+}
+
+.register-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #00796b;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.register-label {
+  color: #00796b;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.register-input {
+  background-color: #f5f5f5;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.register-input:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.2);
+  outline: none;
+}
+
+.register-input::placeholder {
+  color: #9e9e9e;
+}
+
+.register-select {
+  background-color: #f5f5f5;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.register-radio-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.register-radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.register-radio-input {
+  margin-right: 8px;
+}
+
+.register-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.register-checkbox-input {
+  margin-right: 8px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.register-button-primary {
+  background-color: #00796b;
+  border-color: #00796b;
+  color: #ffffff;
+}
+
+.register-button-primary:hover {
+  background-color: #00635a;
+  border-color: #00635a;
+}
+
+.register-button-secondary {
+  background-color: #e57373;
+  border-color: #e57373;
+  color: #ffffff;
+}
+
+.register-button-secondary:hover {
+  background-color: #ef5350;
+  border-color: #ef5350;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+      padding: 30px;
   }
 
-  .dropdown-options{
-    background-color: black;
-
-  }
-  
-  .register-form-control:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-  
-  /* Style for labels to ensure visibility */
-  .login-label {
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  /* Adjust button styles if needed */
-  .btn-success, .btn-primary {
-    opacity: 0.9;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 480px) {
-    .login-form {
-      padding: 1.5rem;
-      margin-top: 100px; /* Adjust top margin for smaller screens */
-    }
+  .register-header {
+      font-size: 24px;
   }
 
+  .register-button {
+      margin-bottom: 10px;
+  }
+}
