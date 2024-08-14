@@ -30,41 +30,32 @@ export default function Login() {
         navigate('/')
     }
   return (
-    <div className="login-page">
-      <div className="card form-login-card shadow ">
-        <div className="mb-4">
-          <h1>Sign In</h1>
+    <div className="login-container">
+    <div className="login-card">
+      <h1 className="login-header">Sign In</h1>
+      <form>
+        <label className="login-label" htmlFor="email">
+          Email address / User name
+        </label>
+        <input className="login-input" type="text" id="email" placeholder="Enter email or username" value={username} onChange={(e) => setUsername(e.target.value)} />
+  
+        <label className="login-label" htmlFor="password">
+          Password
+        </label>
+        <input className="login-input" type="password" id="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+  
+        <div className="login-footer">
+          <p>Don't have an account? <a className="login-link" href="/register">Register</a></p>
         </div>
-
-        <form>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label ">
-              Email address / User name
-            </label>
-            <input type="text" className="form-control login-form-control" id="email" placeholder="enter email or password" value={username} onChange={(e) => setUsername(e.target.value)} />
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input type="password" className="form-control login-form-control" id="password" placeholder="enter password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-          </div>
-
-          <div className="mt-4">
-            <p>Don't have an account? <a href="/register">register</a></p>
-          </div>
-
-          <div className="d-flex justify-content-between mt-4">
-            <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-              Sign in
-            </button>
-            <button type="submit" className="btn btn-danger" onClick={handleCancleLogin}>
-              Cancle
-            </button>
-          </div>
-        </form>
-      </div>
+  
+        <button className="login-button login-button-primary" type="submit" onClick={handleSubmit}>
+          Sign in
+        </button>
+        <button className="login-button login-button-secondary" type="button" onClick={handleCancleLogin}>
+          Cancel
+        </button>
+      </form>
     </div>
+  </div>
   );
 }

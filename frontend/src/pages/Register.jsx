@@ -31,7 +31,7 @@ export default function Register() {
       const response = await axios.post("http://localhost:8080/register", user);
       console.log(response.data);
       alert("Registration successful");
-      navigate('/login'); // Redirect to login page after successful registration
+      navigate('/login');
     } catch (error) {
       console.log("register error : ", error);
       alert("Registration failed. Please try again.");
