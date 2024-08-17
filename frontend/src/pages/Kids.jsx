@@ -1,12 +1,12 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import { FaShoppingCart } from 'react-icons/fa'
-import Navbar from '../components/Navbar'
 import cardImg1 from '../images/women.png'
 import ratingImg from '../images/rating.png'
 import '../css/womens.css'
+import Navbar from '../components/Navbar'
 
-export default function Mens() {
+export default function Kids() {
   return (
     <div>
     <Navbar/>

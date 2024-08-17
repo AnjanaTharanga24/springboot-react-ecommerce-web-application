@@ -9,6 +9,8 @@ import { UserProvider } from "./components/UserContext";
 import UserProfile from "./pages/UserProfile";
 import UserProfileUpdate from "./pages/UserProfileUpdate";
 import Womens from "./pages/Womens";
+import Mens from "./pages/Mens";
+import Kids from "./pages/Kids";
 function App() {
   return (
 
@@ -22,6 +24,10 @@ function App() {
           <Route path="/user-profile" element={<UserProfile/>}/>
           <Route path="/user-profile-update" element={<UserProfileUpdate/>}/>
           <Route path="/womens-fashion" element={<Womens/>}/>
+          <Route path="/mens-fashion" element={<Mens/>}/>
+          <Route path="/kids-fashion" element={<Kids/>}/>
+
+
 
         </Routes>
       </Router>
