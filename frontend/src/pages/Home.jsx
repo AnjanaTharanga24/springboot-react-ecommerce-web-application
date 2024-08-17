@@ -7,6 +7,7 @@ import cardThreeImage from "../images/kids.png";
 import cardFourImage from "../images/cosmetics.png.png";
 import cardFiveImage from "../images/accessories.png";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -28,9 +29,11 @@ export default function Home() {
                 blanditiis maiores asperiores obcaecati repellat sed
                 repudiandae.
               </p>
+              <Link to="/womens-fashion">
               <button className="btn btn-success card-one-button">
                 SHOP NOW
               </button>
+              </Link>
             </div>
             <img src={cardOneImage} alt="Example" className="card-img-top " />
           </div>

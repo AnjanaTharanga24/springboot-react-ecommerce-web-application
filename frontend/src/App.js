@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import { UserProvider } from "./components/UserContext";
 import UserProfile from "./pages/UserProfile";
 import UserProfileUpdate from "./pages/UserProfileUpdate";
+import Womens from "./pages/Womens";
 function App() {
   return (
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/user-profile" element={<UserProfile/>}/>
           <Route path="/user-profile-update" element={<UserProfileUpdate/>}/>
+          <Route path="/womens-fashion" element={<Womens/>}/>
 
         </Routes>
       </Router>
