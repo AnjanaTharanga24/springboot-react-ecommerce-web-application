@@ -1,0 +1,11 @@
+.womens-card{
+    background-color: antiquewhite;
+    width: 300px;
+    height: 500px;
+    margin-left: 30px;
+}
+
+.womens-bg{
+  justify-content: center;
+  margin-top: 50px;
+}
