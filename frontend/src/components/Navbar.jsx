@@ -56,7 +56,7 @@ export default function Navbar() {
 
               <ul className="navbar-nav  mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link text-white fs-5" href="#">
+                  <a className="nav-link text-white fs-5" href="/mens-fashion">
                     Men's
                   </a>
                 </li>
@@ -64,7 +64,7 @@ export default function Navbar() {
 
               <ul className="navbar-nav  mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link text-white fs-5" href="#">
+                  <a className="nav-link text-white fs-5" href="/womens-fashion">
                     Women's
                   </a>
                 </li>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
               <ul className="navbar-nav mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link text-white fs-5" href="#">
+                  <a className="nav-link text-white fs-5" href="/kids-fashion">
                     Kids
                   </a>
                 </li>

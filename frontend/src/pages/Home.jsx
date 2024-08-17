@@ -53,9 +53,11 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
+                  <Link to="/womens-fashion">
                   <button className="btn btn-success card-two-button">
                     SHOP NOW
                   </button>
+                  </Link>
                 </div>
                 <img
                   src={cardTwoImage}
@@ -102,9 +104,12 @@ export default function Home() {
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Quas{" "}
                   </p>
+
+                  <Link to="/womens-fashion">
                   <button className="btn btn-success card-two-button">
                     SHOP NOW
                   </button>
+                  </Link>
                 </div>
                 <img
                   src={cardFourImage}
