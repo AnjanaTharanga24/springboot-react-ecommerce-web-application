@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import "../css/home.css";
 import cardOneImage from "../images/women.png";
-import cardTwoImage from "../images/men.png";
+import cardTwoImage from "../images/mens.png";
 import cardThreeImage from "../images/kids.png";
 import cardFourImage from "../images/cosmetics.png.png";
 import cardFiveImage from "../images/accessories.png";
@@ -51,9 +51,9 @@ export default function Home() {
                   <p>
                     {" "}
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Quas{" "}
+                    {" "}
                   </p>
-                  <Link to="/womens-fashion">
+                   <Link to="/womens-fashion">
                   <button className="btn btn-success card-two-button">
                     SHOP NOW
                   </button>
@@ -66,6 +66,7 @@ export default function Home() {
                 />
               </div>
             </div>
+            
             <div className="card  card-two col-lg-4 ">
               <div className="">
                 <div className="card-two-title">
