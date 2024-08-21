@@ -11,6 +11,7 @@ import UserProfileUpdate from "./pages/UserProfileUpdate";
 import Womens from "./pages/Womens";
 import Mens from "./pages/Mens";
 import Kids from "./pages/Kids";
+import Accessories from "./pages/Accessories";
 function App() {
   return (
 
@@ -26,6 +27,8 @@ function App() {
           <Route path="/womens-fashion" element={<Womens/>}/>
           <Route path="/mens-fashion" element={<Mens/>}/>
           <Route path="/kids-fashion" element={<Kids/>}/>
+          <Route path="/accessories-fashion" element={<Accessories/>}/>
+
 
 
 
