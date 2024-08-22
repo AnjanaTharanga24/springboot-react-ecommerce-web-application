@@ -47,6 +47,7 @@ public class AuthServiceImpl implements AuthService , UserDetailsService {
                 .orElseThrow(()->new NotFoundException("roles not found in the database"));
 
         newUser.getRoles().add(role);
+        newUser.setRole(role.getName());
         newUser.setNumber(userRegisterRequest.getNumber());
         newUser.setEmail(userRegisterRequest.getEmail());
         newUser.setPassword(passwordEncoder.encode(userRegisterRequest.getPassword()));

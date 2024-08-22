@@ -20,6 +20,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/register","/login" ,"/users","/**").permitAll()
+                        .requestMatchers("/sellers/**").hasRole("seller")
                         .anyRequest().authenticated()
                 )
                 .csrf().disable()
