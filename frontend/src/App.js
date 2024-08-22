@@ -13,6 +13,7 @@ import Mens from "./pages/Mens";
 import Kids from "./pages/Kids";
 import Accessories from "./pages/Accessories";
 import SellerDashboard from "./pages/SellerDashboard";
+import SellerAddNewItems from "./pages/SellerAddNewItems";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/kids-fashion" element={<Kids/>}/>
           <Route path="/accessories-fashion" element={<Accessories/>}/>
           <Route path="/seller/dashboard" element={<SellerDashboard/>}/>
+          <Route path="/seller/add-new-items" element={<SellerAddNewItems/>}/>
+
 
 
 
