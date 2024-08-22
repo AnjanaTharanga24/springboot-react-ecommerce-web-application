@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import "../css/addItem.css";
 import axios from "axios";
 import { UserContext } from "../components/UserContext";
+import Swal from 'sweetalert2';
 
 export default function SellerAddNewItems() {
   const [item, setItem] = useState({
@@ -24,20 +25,42 @@ export default function SellerAddNewItems() {
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
+    if(item.name === "" || item.price === 0 || item.itemCategory === ""){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please fill in all fields!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          return;
+    }
     try {
         const response = await axios.post(`http://localhost:8080/sellers/${user.id}/items`, item)
         setItem(response.data)
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: 'Item added successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          });
         console.log(response.data)
     } catch (error) {
-        console.log("error while add item : " + error)
+        console.log("error while add item : " + error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Failed to add item. Please try again.',
+          });
     }
   }
 
   return (
-    <div>
+    <div className="add-item-page">
       <Navbar />
-
-      <div className="add-item-container container card p-4 shadow ">
+      <div>
+         <div className="add-item-container container card shadow ">
         <form >
           <div className="form-group mb-3">
             <label className="mb-3 fs-5">Item name</label>
@@ -48,6 +71,7 @@ export default function SellerAddNewItems() {
               name="name"
               value={item.name}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -60,6 +84,7 @@ export default function SellerAddNewItems() {
               name="price"
               value={item.price}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -73,6 +98,7 @@ export default function SellerAddNewItems() {
               name="itemCategory"
               value={item.itemCategory}
               onChange={handleChange}
+              required
             >
               <option value="">Select item category</option>
               <option value="male">Male</option>
@@ -88,6 +114,9 @@ export default function SellerAddNewItems() {
           </button>
         </form>
       </div>
+      </div>
+
+     
 
       <Footer />
     </div>
