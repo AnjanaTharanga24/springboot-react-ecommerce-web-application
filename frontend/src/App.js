@@ -14,6 +14,7 @@ import Kids from "./pages/Kids";
 import Accessories from "./pages/Accessories";
 import SellerDashboard from "./pages/SellerDashboard";
 import SellerAddNewItems from "./pages/SellerAddNewItems";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
           <Route path="/accessories-fashion" element={<Accessories/>}/>
           <Route path="/seller/dashboard" element={<SellerDashboard/>}/>
           <Route path="/seller/add-new-items" element={<SellerAddNewItems/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+
 
 
 
