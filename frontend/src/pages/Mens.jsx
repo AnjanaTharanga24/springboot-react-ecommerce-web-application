@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import { FaShoppingCart } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
-import cardImg1 from '../images/women.png'
+import cardImg1 from '../images/mens.png'
 import ratingImg from '../images/rating.png'
 import '../css/womens.css'
 
@@ -12,7 +12,7 @@ export default function Mens() {
     <Navbar/>
 
      <div className='d-flex womens-bg '>
-      <div className=' card womens-card shadow'>
+      <div className=' card womens-card shadow' style={{height:"600px"}}>
          <img src={cardImg1} className='womens-item-img' />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
@@ -32,7 +32,7 @@ export default function Mens() {
          </div>
       </div>
 
-      <div className=' card womens-card shadow'>
+      <div className=' card womens-card shadow'  style={{height:"600px"}}>
          <img src={cardImg1} className='womens-item-img' />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
@@ -52,7 +52,7 @@ export default function Mens() {
          </div>
       </div>
 
-      <div className=' card womens-card shadow'>
+      <div className=' card womens-card shadow'  style={{height:"600px"}}>
          <img src={cardImg1} className='womens-item-img' />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
@@ -72,7 +72,7 @@ export default function Mens() {
          </div>
       </div>
 
-      <div className=' card womens-card shadow'>
+      <div className=' card womens-card shadow'  style={{height:"600px"}}>
          <img src={cardImg1} className='womens-item-img' />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
