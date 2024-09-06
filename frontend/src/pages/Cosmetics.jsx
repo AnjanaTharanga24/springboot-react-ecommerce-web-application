@@ -1,20 +1,18 @@
 import React from 'react'
-import { FaShoppingCart } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import cardImg1 from '../images/accessories.png'
+import cardImg1 from '../images/cosmetics.png.png'
 import ratingImg from '../images/rating.png'
 import '../css/womens.css'
-
-export default function Accessories() {
+import { FaShoppingCart } from 'react-icons/fa'
+export default function Cosmetics() {
   return (
     <div>
-   
-   <Navbar/>
+    <Navbar/>
 
-<div className='d-flex womens-bg '>
+     <div className='d-flex womens-bg '>
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' height={'400px'} />
+         <img src={cardImg1} className='womens-item-img mt-5' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -34,7 +32,7 @@ export default function Accessories() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' height={'400px'}/>
+         <img src={cardImg1} className='womens-item-img mt-5' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -54,7 +52,7 @@ export default function Accessories() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' height={'400px'} />
+         <img src={cardImg1} className='womens-item-img mt-5' height={'400px'}/>
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -74,7 +72,7 @@ export default function Accessories() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' height={'400px'}/>
+         <img src={cardImg1} className='womens-item-img mt-5' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -97,8 +95,8 @@ export default function Accessories() {
       
      </div>
 
-     <Footer/>
 
-    </div>
+    <Footer/>
+  </div>
   )
 }

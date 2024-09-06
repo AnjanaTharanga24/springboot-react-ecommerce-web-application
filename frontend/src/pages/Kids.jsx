@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import { FaShoppingCart } from 'react-icons/fa'
-import cardImg1 from '../images/women.png'
+import cardImg1 from '../images/kids.png'
 import ratingImg from '../images/rating.png'
 import '../css/womens.css'
 import Navbar from '../components/Navbar'
@@ -13,7 +13,7 @@ export default function Kids() {
 
      <div className='d-flex womens-bg '>
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' />
+         <img src={cardImg1} className='womens-item-img' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -33,7 +33,7 @@ export default function Kids() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' />
+         <img src={cardImg1} className='womens-item-img' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -53,7 +53,7 @@ export default function Kids() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' />
+         <img src={cardImg1} className='womens-item-img' height={'400px'} />
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
@@ -73,7 +73,7 @@ export default function Kids() {
       </div>
 
       <div className=' card womens-card shadow'>
-         <img src={cardImg1} className='womens-item-img' />
+         <img src={cardImg1} className='womens-item-img' height={'400px'}/>
          <p className='card-title fs-3 mt-4'>Tropical Kimono</p>
 
          <div>
