@@ -11,6 +11,8 @@ import com.example.backend.service.SellerService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class SellerServiceImpl implements SellerService {
@@ -45,5 +47,12 @@ public class SellerServiceImpl implements SellerService {
         }
 
         return null;
+    }
+
+    @Override
+    public List<Item> itemsFindByCategory(String category) {
+
+        List<Item> items = itemRepository.findItemByItemCategory(category);
+        return items;
     }
 }
