@@ -108,7 +108,7 @@ export default function Home() {
                     Quas{" "}
                   </p>
 
-                  <Link to="/womens-fashion">
+                  <Link to="/cosmetics">
                   <button className="btn btn-success card-two-button">
                     SHOP NOW
                   </button>
