@@ -19,7 +19,6 @@ export default function Navbar() {
   };
 
   const roleNames = user?.roles?.map((role) => role.name) || [];
-  console.log("user role names: ", roleNames); // Log user role names for debugging
 
   return (
     <div>
