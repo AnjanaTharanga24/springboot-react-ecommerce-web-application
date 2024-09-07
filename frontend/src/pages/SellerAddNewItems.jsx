@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 export default function SellerAddNewItems() {
   const [item, setItem] = useState({
     name: "",
-    price: 0,
+    price: null,
     itemCategory: "",
   });
 
