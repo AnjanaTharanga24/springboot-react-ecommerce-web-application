@@ -21,8 +21,8 @@ public class SellerController {
         return sellerService.addNewItem(userId,sellerAddNewItemRequest);
     }
 
-    @GetMapping("/sellers/items")
-    public List<Item> findByCategroy(@RequestParam("category") String category){
+    @GetMapping("/sellers/items/{category}")
+    public List<Item> findByCategroy(@PathVariable("category") String category){
         return sellerService.itemsFindByCategory(category);
     }
 
