@@ -37,7 +37,7 @@ export default function Navbar() {
               >
                 <li className="d-flex">
                   <img className="logo" src={logoImage} />
-                  <a className="nav-link text-white fs-1 mt-3 ms-2" href="#">
+                  <a className="nav-link text-white fs-1 mt-3 ms-2" href="">
                     Fashion Cart
                   </a>
                 </li>
@@ -104,7 +104,7 @@ export default function Navbar() {
 
               {user && (
                 <>
-                  <a href="#" className="text-white p-2 cart-icon">
+                  <a href="/cart" className="text-white p-2 cart-icon">
                     <i className="fas fa-shopping-cart shopping-cart"></i>
                   </a>
 
