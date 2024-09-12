@@ -9,40 +9,44 @@ import axios from "axios";
 
 export default function Mens() {
   const [mens, setMens] = useState([]);
-  let [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     getMensItems();
   }, []);
+
   const getMensItems = async () => {
     try {
       const response = await axios.get(
         `http://localhost:8080/sellers/items/male`
       );
-      setMens(response.data);
-      console.log(response.data);
+      const mensWithQuantity = response.data.map(item => ({
+        ...item,
+        quantity: 0
+      }));
+      setMens(mensWithQuantity);
+      console.log(mensWithQuantity);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handlePlusButton = () => {
-    let i = quantity + 1;
-    if (i > 10) {
-      alert("you can only add only 10 items at once ");
-    } else {
-      setQuantity(i);
-    }
+  const handleQuantityChange = (index, change) => {
+    setMens(prevMens => {
+      const newMens = [...prevMens];
+      const newQuantity = newMens[index].quantity + change;
+      
+      if (newQuantity >= 0 && newQuantity <= 10) {
+        newMens[index] = { ...newMens[index], quantity: newQuantity };
+      } else if (newQuantity > 10) {
+        alert("You can only add up to 10 items at once");
+      } else {
+        alert("Quantity cannot be less than 0");
+      }
+      
+      return newMens;
+    });
   };
 
-  const handleMinusButton = () => {
-    let i = quantity - 1;
-    if (i < 0) {
-      alert("Quantity cannot be less than 0");
-    } else {
-      setQuantity(i);
-    }
-  };
   return (
     <div>
       <Navbar />
@@ -51,47 +55,50 @@ export default function Mens() {
         {mens.map((item, index) => (
           <div
             key={index}
-            className=" card womens-card shadow mb-4"
+            className="card womens-card shadow mb-4"
             style={{ height: "620px" }}
           >
-            <img src={cardImg1} className="womens-item-img" />
+            <img src={cardImg1} className="womens-item-img" alt={item.name} />
             <p className="card-title fs-3 mt-4">{item.name}</p>
 
             <div>
-              <img src={ratingImg} className="rating-img" />
+              <img src={ratingImg} className="rating-img" alt="rating" />
             </div>
 
-            <di className="d-flex mt-3" style={{ marginLeft: "70px" }}>
+            <div className="d-flex mt-3" style={{ marginLeft: "70px" }}>
               <div>
-                <p className="fs-4 ">Quantity:</p>
+                <p className="fs-4">Quantity:</p>
               </div>
 
               <div className="" style={{ marginLeft: "50px" }}>
                 <button
-                  className=" plus-btn"
+                  className="plus-btn"
                   style={{ marginRight: "10px" }}
-                  onClick={handlePlusButton}
+                  onClick={() => handleQuantityChange(index, 1)}
                 >
                   +
                 </button>
                 <span className="fs-3" style={{ marginRight: "10px" }}>
-                  {quantity}
+                  {item.quantity}
                 </span>
-                <button className=" minus-btn" onClick={handleMinusButton}>
+                <button 
+                  className="minus-btn" 
+                  onClick={() => handleQuantityChange(index, -1)}
+                >
                   -
                 </button>
               </div>
-            </di>
+            </div>
 
             <div className="d-flex p-4 ms-3 ">
               <div>
-                <button className="btn btn-dark ">
-                  <FaShoppingCart /> Add to Cart{" "}
+                <button className="btn btn-dark">
+                  <FaShoppingCart /> Add to Cart
                 </button>
               </div>
 
               <div className="">
-                <p className="card-price ">${item.price}</p>
+                <p className="card-price">${item.price}</p>
               </div>
             </div>
           </div>
