@@ -14,7 +14,8 @@ public class Cart {
     private String itemName;
     private String category;
     private Integer quantity;
+    private Float price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 }
