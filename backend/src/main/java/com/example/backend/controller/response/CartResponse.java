@@ -16,5 +16,6 @@ public class CartResponse {
     private String itemName;
     private String category;
     private Integer quantity;
-    private User user;
+    private Float price;
+    private Long user;
 }
