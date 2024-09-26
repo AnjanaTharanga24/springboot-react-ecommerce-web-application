@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { FaShoppingCart } from "react-icons/fa";
 import Navbar from "../components/Navbar";
@@ -6,19 +6,35 @@ import cardImg1 from "../images/mens.png";
 import ratingImg from "../images/rating.png";
 import "../css/womens.css";
 import axios from "axios";
+import { UserContext } from "../components/UserContext";
 
 export default function Mens() {
   const [mens, setMens] = useState([]);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     getMensItems();
   }, []);
 
+  const addToCart = async (item) => {
+    try {
+      const cartRequest = {
+        itemName: item.name,
+        quantity: item.quantity
+      };
+
+      const response = await axios.post(`http://localhost:8080/buyer/${user.id}/addtocart`, cartRequest);
+      console.log("Item added to cart : ", response.data);
+      alert("Item added to cart successfully!");
+    } catch (error) {
+      console.error("Error adding item to cart:", error);
+      alert("Failed to add item to cart. Please try again.");
+    }
+  };
+
   const getMensItems = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/sellers/items/male`
-      );
+      const response = await axios.get(`http://localhost:8080/sellers/items/male`);
       const mensWithQuantity = response.data.map(item => ({
         ...item,
         quantity: 0
@@ -92,7 +108,7 @@ export default function Mens() {
 
             <div className="d-flex p-4 ms-3 ">
               <div>
-                <button className="btn btn-dark">
+                <button className="btn btn-dark" onClick={() => addToCart(item)} disabled={item.quantity === 0}>
                   <FaShoppingCart /> Add to Cart
                 </button>
               </div>
