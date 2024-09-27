@@ -28,7 +28,7 @@ export default function Mens() {
       alert("Item added to cart successfully!");
     } catch (error) {
       console.error("Error adding item to cart:", error);
-      alert("Failed to add item to cart. Please try again.");
+      alert("Failed to add item. Please try again.");
     }
   };
 
