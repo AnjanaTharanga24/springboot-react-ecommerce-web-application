@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 public class CartRequest {
 
     private String itemName;
+    private Float price;
     private Integer quantity;
-    private User user;
+    private String category;
+
 }
