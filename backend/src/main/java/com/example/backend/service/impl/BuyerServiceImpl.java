@@ -24,17 +24,18 @@ public class BuyerServiceImpl implements BuyerService {
     public CartResponse addToCart(Long userId , CartRequest cartRequest) throws NotFoundException {
 
         User user = userRepository.findById(userId).orElseThrow(()-> new NotFoundException("user not found with id " + userId));
-        Item item = itemRepository.findItemByName(cartRequest.getItemName());
+//        Item item = itemRepository.findItemByName(cartRequest.getItemName());
+//        System.out.println(item);
 
-        if(item == null){
-            throw new NotFoundException("item not found with name" + cartRequest.getItemName());
-        }
+//        if(item == null){
+//            throw new NotFoundException("item not found with name" + cartRequest.getItemName());
+//        }
 
-        Float price = (float) (item.getPrice() * cartRequest.getQuantity());
+        Float price = (float) (cartRequest.getPrice() * cartRequest.getQuantity());
 
         Cart cart = new Cart();
-        cart.setItemName(item.getName());
-        cart.setCategory(item.getItemCategory());
+        cart.setItemName(cartRequest.getItemName());
+        cart.setCategory(cartRequest.getCategory());
         cart.setQuantity(cartRequest.getQuantity());
         cart.setPrice(price);
         cart.setUser(user);
