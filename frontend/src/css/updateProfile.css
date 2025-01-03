@@ -1,0 +1,12 @@
+.register-page{
+  background-color: rgb(206, 206, 219);
+}
+.form-card{
+    padding: 20px;
+    margin-left: 400px;
+    width: 1000px;
+    margin-top: 70px;
+    margin-bottom: -300px;
+    border-radius: 20px;
+    font-size: larger;
+}

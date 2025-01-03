@@ -20,6 +20,8 @@ export default function Mens() {
     try {
       const cartRequest = {
         itemName: item.name,
+        price:item.price,
+        category:"Male",
         quantity: item.quantity
       };
 

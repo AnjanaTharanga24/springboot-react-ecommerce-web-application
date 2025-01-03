@@ -69,7 +69,7 @@
   .sd-card-icon {
     font-size: 80px;
     margin-bottom: 20px;
-    color: #ffffff; /* Ensures the icon color remains white */
+    color: #ffffff; 
   }
   
   .sd-card-title {
@@ -79,9 +79,9 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Ensures text color remains white */
-    display: inline-block; /* Prevents full-width underline */
+    text-decoration: none; 
+    color: #ffffff;
+    display: inline-block;
   }
   
   .sd-card-title:hover {
